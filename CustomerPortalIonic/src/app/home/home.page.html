@@ -20,6 +20,7 @@
               <ion-col><strong>Contact First</strong></ion-col>
               <ion-col><strong>Contact Last</strong></ion-col>
               <ion-col><strong>Date Created</strong></ion-col>
+              <ion-col><strong>Action</strong></ion-col>
           </ion-row>
           
           <ion-row *ngFor="let item of custList">         
@@ -32,6 +33,9 @@
               <ion-col>{{item.ContactFirst}}</ion-col>
               <ion-col>{{item.ContactLast}}</ion-col>
               <ion-col>{{item.CreatedDate}}</ion-col>
+              <ion-col><ion-item [routerLink]="'/edit-customer/' + item.CustomerId" routerDirection="forward">Edit</ion-item></ion-col>
+              
+
             </ion-row>
 
       </ion-grid>

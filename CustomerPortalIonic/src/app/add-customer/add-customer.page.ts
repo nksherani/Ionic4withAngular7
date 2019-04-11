@@ -24,20 +24,20 @@ export class AddCustomerPage implements OnInit {
 
   onSubmit=()=>{
     var cust = {
+      CustomerId: 0,
       CustomerName: this.customer.controls.CustomerName.value,
       Address: this.customer.controls.Address.value,
       Zip: this.customer.controls.Zip.value,
       City: this.customer.controls.City.value,
       Telephone: this.customer.controls.Telephone.value,
       ContactFirst: this.customer.controls.ContactFirst.value,
-      ContactLast: this.customer.controls.ContactLast.value
+      ContactLast: this.customer.controls.ContactLast.value,
+      CreatedDate:null,
+      UpdatedDate:null
     }
     console.log(cust);
-
-    this.http.post('http://localhost:52146/api/Customers/PostCustomer', {
-      content: cust,
-      contentType: 'application/json',
-  }).subscribe((response) => {
+    
+    this.http.post('http://localhost:52146/api/Customers/PostCustomer', cust).subscribe((response) => {
       console.log(response);
   });
 

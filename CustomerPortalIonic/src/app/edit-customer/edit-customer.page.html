@@ -1,9 +1,50 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>EditCustomer</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+    <ion-toolbar>
+      <ion-title>Edit Customer</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <form *ngIf="customer"  [formGroup]="customer" (submit)="onSubmit()">
+  
+        <ion-item>
+            <ion-label>Customer Name</ion-label>
+            <ion-input type="text" formControlName="CustomerName" ></ion-input>
+        </ion-item>
+  
+        <ion-item>
+            <ion-label>Address</ion-label>
+            <ion-input type="text" formControlName="Address"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+            <ion-label>Zip</ion-label>
+            <ion-input type="text" formControlName="Zip" ></ion-input>
+        </ion-item>
+  
+        <ion-item>
+            <ion-label>City</ion-label>
+            <ion-input type="text" formControlName="City"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+            <ion-label>Telephone</ion-label>
+            <ion-input type="text" formControlName="Telephone" ></ion-input>
+        </ion-item>
+  
+        <ion-item>
+            <ion-label>Contact First</ion-label>
+            <ion-input type="text" formControlName="ContactFirst"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+            <ion-label>Contact Last</ion-label>
+            <ion-input type="text" formControlName="ContactLast"></ion-input>
+        </ion-item>
+        <ion-button expand="block" type="Submit">Update</ion-button>
+  
+      </form>
+      
+  
+  </ion-content>
+  

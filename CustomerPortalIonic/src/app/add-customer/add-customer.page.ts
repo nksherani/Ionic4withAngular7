@@ -39,6 +39,7 @@ export class AddCustomerPage implements OnInit {
     
     this.http.post('http://localhost:52146/api/Customers/PostCustomer', cust).subscribe((response) => {
       console.log(response);
+      window.location.href='/';
   });
 
   }
